@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <title>TecBlog - Seu portal de tecnologia</title>
+    <style>
+        /* Estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "DM Sans", Arial, sans-serif;
+            background-color: #f2f2f2;
+            line-height: 1.6;
+            color: #333; /* Cor do texto */
+        }
+
+        /* Estilos para a barra de navegação */
+        header {
+            background-color: #343d48;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Estilos para o cabeçalho do blog */
+        .blog-header {
+            background-color: #343d48;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Estilos para o conteúdo principal */
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        /* Estilos para as postagens */
+        .post {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 01);
+            padding: 20px;
+            flex-basis: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para as imagens nas postagens */
+        .post img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos para o rodapé */
+        footer {
+            background-color: #343d48;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* Media Query para tornar o layout responsivo */
+        @media only screen and (max-width: 768px) {
+            .post {
+                flex-basis: 100%;
+            }
+        }
+
+        /* Estilos para o menu lateral */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #343d48; /* Azul Salesforce */
+            color: #fff; /* Texto branco */
+            padding: 20px;
+            overflow-y: auto; /* Adicionando a barra de rolagem vertical */
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-bottom: 10px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Estilos para o título do menu */
+        .menu-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para o item do menu quando passar o mouse */
+        .menu li:hover {
+            background-color: #444; /* Azul escuro */
+        }
+
+        /* Estilo para o item do menu quando estiver clicado */
+        .menu li.active {
+            background-color: #555; /* Azul mais escuro */
+        }
+
+        /* Estilos para o conteúdo depois do menu lateral */
+        .content-after-menu {
+            margin-left: 220px; /* Largura do menu + 20px de espaço */
+            padding: 20px;
+        }
+
+        .content-after-menu .post {
+            width: 100%; /* Alterado para ocupar 100% da largura da classe .content-after-menu */
+        }
+
+        /* Estilos para o código dentro das postagens */
+        pre {
+            background-color: #1a1a1a;
+            color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 style="font-size: 27px; color: #fff; margin-bottom: 20px;">Bem-vindo ao SalesBlog - Acompanhe meus estudos!</h2>
+    </header>
+
+    <!-- Menu lateral fixo -->
+    <div class="side-menu">
+        <div class="menu-title">Publicações</div>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="formula.html" target="_self">Formula (Business Hours)</a></li>
+                <li><a href="json.html">Deserialização JSON</a></li>
+                <li><a href="metodofuturo.html">Metodo Futuro</a></li>
+                <!-- Adicione outros links desejados -->
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Conteúdo após o menu lateral -->
+    <div class="content-after-menu">
+        <div class="content">
+            <!-- Postagem única -->
+            <div class="post">
+                <h3>- Classe método futuro</h3>
+                <pre>
+                    <code>
+                        public class AccountProcessor {
+                            @future
+                            public static void countContacts(list<Id> listId){
+
+                                List<Account> lstAccount =[Select Id,Number_Of_Contacts__c,
+                                                            (Select Id from Contacts)
+                                                                FROM Account where Id IN :listId];
+                                for(Account acc : lstAccount){
+                                    List<Contact>lstContact = acc.Contacts;
+                                    acc.Number_Of_Contacts__c = lstContact.size();
+                                }
+                                update lstAccount;
+                            }
+                        }
+                    </code>
+                </pre>
+                <br>
+            </div>
+
+
+            <div class="post">
+                <h3>- TRIGGER </h3>
+                <pre>
+                    <code>
+                        trigger AccountTrigger on Account (after insert) {
+
+                            /*List<Id> listaId = new List<Id>();
+                            for(Account a : Trigger.new){
+                                listaId.add(a.Id);
+                            }
+                            AccountProcessor.countContacts(listaId);*/
+
+                            AccountProcessor.countContacts(new List<Id>(Trigger.newMap.keySet()));
+                        }
+                    </code>
+                </pre>
+                <br>
+            </div>
+
+
+            <div class="post">
+                <h3>- Anônimo </h3>
+                <pre>
+                    <code>
+                        List<Account> listaConta = new List<Account>();
+
+                            Account conta = new Account();
+                            conta.Name = 'Test Account';
+                            listaConta.add(conta);
+
+                            Account conta2 = new Account();
+                            conta2.Name = 'Teste 2';
+                            listaConta.add(conta2);
+
+                            insert listaConta;
+                    </code>
+                </pre>
+                <br>
+            </div>
+            <div class="post">
+                <h3>- Classe de teste </h3>
+                <pre>
+                    <code>
+                    @IsTest
+                    public class AccountProcessorTest {
+                    @IsTest
+                    public static void testAccountProcessor(){
+                        Account a = new Account();
+                        a.Name = 'Test Account';
+                        insert a;
+
+                        Contact cont = new Contact();
+                        cont.FirstName = 'Milena';
+                        cont.LastName  = 'Andrade';
+                        cont.AccountId = a.Id;
+                        insert cont;
+
+
+                        List<Id> listAccIdd = new List<Id>();
+                        listAccIdd.add(a.Id);
+
+                        Test.startTest();
+                        AccountProcessor.countContacts(listAccIdd);
+                        Test.StopTest();
+
+                    Account acc2 = [SELECT Number_Of_Contacts__c FROM Account WHERE Id =: a.Id LIMIT 1];
+                    System.assertEquals(Integer.valueOf(acc2.Number_Of_Contacts__c),1);
+    }
+}
+                    </code>
+                </pre>
+                <br>
+                <p>
+                    1. `public class AccountProcessor` é uma classe Apex que contém um método chamado `countContacts`. Esse método é marcado com a anotação `@future`, o que significa que ele será executado de forma assíncrona em um contexto separado do processo principal. <br> <br>
+
+                    2. O método `countContacts` recebe uma lista de IDs de conta (`list<Id> listId`) como parâmetro. Ele executa uma consulta SOQL para buscar todas as contas com base nos IDs fornecidos, bem como seus contatos associados. O resultado da consulta é armazenado em uma lista de contas chamada `lstAccount`.<br><br>
+
+                    3. Em seguida, o método percorre a lista de contas `lstAccount` e, para cada conta, obtém a lista de contatos associados (`List<Contact> lstContact = acc.Contacts`). Ele atualiza o campo `Number_Of_Contacts__c` de cada conta com o número de contatos associados.<br><br>
+
+                    4. Após atualizar os campos `Number_Of_Contacts__c` nas contas, o método realiza uma operação de atualização (`update lstAccount`) para persistir as alterações no banco de dados.<br><br>
+
+                    5. O trigger `AccountTrigger` é acionado após a inserção de novas contas (`after insert`). Ele chama o método `countContacts` da classe `AccountProcessor`, passando a lista de IDs das contas recém-inseridas (`Trigger.newMap.keySet()`).<br><br>
+
+                    6. Em seguida, é criada uma lista de contas (`List<Account> listaConta`) e duas novas contas são criadas (`conta` e `conta2`) e adicionadas a essa lista.<br><br>
+
+                    7. Finalmente, a lista de contas (`listaConta`) é inserida no banco de dados usando o comando `insert listaConta`.<br><br>
+
+                    Em resumo, o código está criando um método assíncrono para contar o número de contatos associados a cada conta e atualizar o campo `Number_Of_Contacts__c` das contas com esse valor. O trigger é acionado quando novas contas são inseridas e chama o método `countContacts` para processar as contas recém-inseridas. Em seguida, são criadas e inseridas duas novas contas como exemplo.</p>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <script>
+        const menuItems = document.querySelectorAll(".menu li");
+
+        menuItems.forEach(item => {
+            item.addEventListener("click", () => {
+                // Remover a classe 'active' de todos os itens
+                menuItems.forEach(item => item.classList.remove("active"));
+                // Adicionar a classe 'active' ao item clicado
+                item.classList.add("active");
+            });
+
+            item.addEventListener("mouseover", () => {
+                item.style.backgroundColor = "#withe";
+            });
+
+            item.addEventListener("mouseout", () => {
+                item.style.backgroundColor = "";
+            });
+        });
+    </script>
+</body>
+</html>
+v

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
+    <title>MILENA PORTIFOLIO</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="nav.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    />
+    <style>
+        /* Estilos para o conteúdo do blog */
+        .content {
+            padding: 20px;
+            max-width: 75%;
+            margin: 0 auto;
+        }
+        .post {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .post img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .post h3 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .post p {
+            font-size: 16px;
+        }
+        /* Estilos para o botão de menu */
+        .menu-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+        }
+        /* Estilos para o menu lateral */
+/* Estilos para o menu lateral */
+.side-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+/* Estilos para o cabeçalho do menu */
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para o título do menu */
+.menu-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilos para o botão de fechar */
+.close-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Estilos para os itens do menu */
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Adicione esta linha para remover a margem padrão do UL */
+}
+
+.side-menu li {
+    margin-bottom: 10px;
+}
+
+/* Estilos para os links no menu */
+.side-menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block; /* Adicione esta linha para tornar os links ocuparem toda a largura disponível */
+}
+
+        /* Media Query para mostrar/esconder os botões de menu */
+        @media only screen and (max-width: 768px) {
+            .menu-button {
+                display: block;
+            }
+            .close-button {
+                display: none;
+            }
+            .side-menu {
+                display: none;
+            }
+            .show-menu .side-menu {
+                display: block;
+            }
+            .content {
+                max-width: 100%;
+            }
+        }
+
+        /* Estilos para o header */
+        header {
+            margin-top: 0;
+            font-size: 2.4rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="navbar__content max-width mb-0">
+            <a href="/">
+            </a>
+            <ul class="navbar__links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="salesforce.html">Salesforce</a></li>
+                <li><a href="#footer">Contato</a></li>
+            </ul>
+            <!-- Botão de menu -->
+            <button class="menu-button" onclick="toggleMenu()">Postagens</button>
+        </div>
+    </nav>
+
+    <!-- Menu lateral -->
+    <div class="side-menu" id="sideMenu">
+        <button class="close-button" onclick="toggleMenu()">X</button>
+        <nav class="menu" id="side-menu">
+            <!-- Coloque aqui os links de navegação -->
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="salesforce.html">sf1</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- header -->
+    <header id="header" class="max-width">
+
+    </header>
+
+    <!-- Blog Content -->
+    <div class="content">
+        <!-- Postagem única -->
+        <div class="post">
+           <center> <img src="imgs/sff.png" alt="Imagem da postagem 1">
+            <h3>Construir Dashboards no Salesforce</h3></center>
+            <p>
+                Dashboards são ferramentas essenciais para acompanhar e analisar dados no Salesforce. Eles permitem que os usuários visualizem informações importantes de forma clara e concisa, facilitando a tomada de decisões fundamentadas.
+
+                Para construir um dashboard no Salesforce, primeiro, é necessário selecionar os componentes ou relatórios que fornecerão os dados. Os relatórios devem ser criados previamente, contendo as informações relevantes para a análise desejada.
+            </p>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer id="footer" class="max-width">
+    </footer>
+
+    <!-- script -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("sideMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
