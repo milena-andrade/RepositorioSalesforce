@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>SalesBlog - Acompanhe meus estudos</title>
+    <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Estilos gerais */
+            body {
+                font-family: "DM Sans", Arial, sans-serif;
+                background-color: #f2f2f2;
+                line-height: 1.6;
+                color: #333; /* Cor do texto */
+            }
+
+            /* Estilos para a barra de navegação */
+            header {
+                background-color: #343d48;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+            }
+
+            /* Estilos para o cabeçalho do blog */
+            .blog-header {
+                background-color: #343d48;
+                color: #fff;
+                text-align: center;
+                padding: 20px;
+            }
+
+            /* Estilos para o conteúdo principal */
+            .content {
+                padding: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            /* Estilos para as postagens */
+            .post {
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 01);
+                padding: 20px;
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+
+            /* Estilos para as imagens nas postagens */
+            .post img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            /* Estilos para o rodapé */
+            footer {
+                background-color: #343d48;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+            }
+
+            /* Estilos para o menu lateral */
+            .side-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 100%;
+                background-color: #343d48; /* Azul Salesforce */
+                color: #fff; /* Texto branco */
+                padding: 20px;
+                overflow-y: auto; /* Adicionando a barra de rolagem vertical */
+            }
+
+            .menu ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .menu li {
+                margin-bottom: 10px;
+            }
+
+            .menu a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            /* Estilos para o título do menu */
+            .menu-title {
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            /* Estilo para o item do menu quando passar o mouse */
+            .menu li:hover {
+                background-color: #444; /* Azul escuro */
+            }
+
+            /* Estilo para o item do menu quando estiver clicado */
+            .menu li.active {
+                background-color: #555; /* Azul mais escuro */
+            }
+
+            /* Estilos para o conteúdo depois do menu lateral */
+               .content-after-menu {
+                margin-left: 220px; /* Largura do menu + 20px de espaço */
+                padding: 20px;
+            }
+
+            .content-after-menu .post {
+                width: 100%; /* Ocupar 100% da largura da classe .content-after-menu */
+            }
+
+            /* Media Query para tornar o layout responsivo */
+             @media only screen and (max-width: 768px) {
+                .post {
+                    flex-basis: 100%;
+                }
+            }
+                 /* Estilos para o menu lateral */
+            .side-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 100%;
+                background-color: #343d48; /* Azul Salesforce */
+                color: #fff; /* Texto branco */
+                padding: 20px;
+                overflow-y: auto; /* Adicionando a barra de rolagem vertical */
+            }
+            pre {
+                background-color: #1a1a1a;
+                color: #f1f1f1;
+                padding: 10px;
+                border-radius: 5px;
+                font-family: 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.5;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="blog-header">Bem-vindo ao SalesBlog - Acompanhe meus estudos!</h2>
+    </header>
+
+    <!-- Menu lateral fixo -->
+    <div class="side-menu">
+        <div class="menu-title">Publicações</div>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="formula.html" target="_self">Formula (Business Hours)</a></li>
+                <li><a href="json.html">Deserialização JSON</a></li>
+                <li><a href="metodofuturo.html">Metodo Futuro</a></li>
+                <li><a href="formulario.html">Formulário LWC</a></li>
+                <!-- Adicione outros links desejados -->
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Conteúdo após o menu lateral -->
+    <div class="content-after-menu">
+        <div class="content">
+            <!-- Postagem única -->
+            <div class="post">
+                <h3>Estrutura simples de um formulário LWC</h3> <br>
+               <CENTER>  <img src="assets/form.png" alt="Imagem da postagem 1"> </CENTER>
+                <p>
+
+                </p>
+            </div>
+
+            <div class="post">
+                <h3>- HTML</h3> <br>
+                <img src="assets/LWCHTML.png" alt="Imagem da postagem 1">
+                <p>
+
+                </p>
+            </div>
+
+            <div class="post">
+                <h3>- JAVASCRIPT</h3> <br>
+                <pre>
+                    <code>
+                        import { LightningElement } from 'lwc';
+
+                        export default class Formulario extends LightningElement {
+
+                            nomeCompleto = '';
+                            telefone= '';
+                            email = '';
+
+                            handleEvento(event){
+                                const field = event.target.name;
+                                if(field == 'nomeCompleto'){
+                                    this.nomeCompleto = event.target.value;
+                                }else if(field == 'telefone'){
+                                    this.telefone = event.target.value;
+                                }else if(field == 'email'){
+                                    this.email = event.target.value;
+                                }
+                            }
+
+                        }
+                    </code>
+                </pre>
+                <br>
+                <a href="assets/Formulario.pdf" class="btn btn-primary">Explicação detalhada</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const menuItems = document.querySelectorAll(".menu li");
+
+        menuItems.forEach(item => {
+            item.addEventListener("click", () => {
+                // Remover a classe 'active' de todos os itens
+                menuItems.forEach(item => item.classList.remove("active"));
+                // Adicionar a classe 'active' ao item clicado
+                item.classList.add("active");
+            });
+
+            item.addEventListener("mouseover", () => {
+                item.style.backgroundColor = "#withe";
+            });
+
+            item.addEventListener("mouseout", () => {
+                item.style.backgroundColor = "";
+            });
+        });
+    </script>
+</body>
+</html>
