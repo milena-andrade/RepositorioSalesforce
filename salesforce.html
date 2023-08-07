@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <title>TecBlog - Seu portal de tecnologia</title>
+    <title>SalesBlog - Acompanhe meus estudos</title>
     <style>
         * {
             margin: 0;
@@ -79,13 +79,6 @@
             bottom: 0;
         }
 
-        /* Media Query para tornar o layout responsivo */
-        @media only screen and (max-width: 768px) {
-            .post {
-                flex-basis: 100%;
-            }
-        }
-
         /* Estilos para o menu lateral */
         .side-menu {
             position: fixed;
@@ -133,29 +126,35 @@
 
         /* Estilos para o conteúdo depois do menu lateral */
         .content-after-menu {
-            margin-left: 220px; /* Largura do menu + 20px de espaço */
             padding: 20px;
+            margin-left: 220px; /* Largura do menu + 20px de espaço */
+            width: calc(100% - 220px); /* Largura do conteúdo = 100% - largura do menu */
         }
 
         .content-after-menu .post {
-            width: 100%; /* Alterado para ocupar 100% da largura da classe .content-after-menu */
+            width: 100%; /* Ocupar 100% da largura da classe .content-after-menu */
         }
-        pre {
-            background-color: #1a1a1a;
-            color: #f1f1f1;
-            padding: 10px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            line-height: 1.5;
-            white-space: pre-wrap;
-            word-wrap: break-word;
+
+        /* Media Query para tornar o layout responsivo */
+        @media only screen and (max-width: 768px) {
+            header h2 {
+                font-size: 20px;
+            }
+            .side-menu {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            .content-after-menu {
+                margin-left: 0;
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h2 style="font-size: 27px; color: #fff; margin-bottom: px;">Bem-vindo ao SalesBlog - Acompanhe meus estudos!</h2>
+        <h2 class="blog-header">Bem-vindo ao SalesBlog - Acompanhe meus estudos!</h2>
     </header>
 
     <!-- Menu lateral fixo -->
@@ -178,24 +177,11 @@
         <div class="content">
             <!-- Postagem única -->
             <div class="post">
-                <img src="imgs/horas.jpg" alt="Imagem da postagem 1">
-                <h3>A fórmula abaixo calcula a diferença de tempo entre dois campos Date/Time, considerando apenas o horário comercial de 08h às 17h e os dias úteis, no formato GMT Brasil:</h3>
-                <pre>
-                    <code>
-    10 * (
-    (5 * FLOOR((DATEVALUE(CreatedDate) - DATE(1996, 01, 01)) / 7) +
-    MIN(5, MOD(DATEVALUE(CreatedDate) - DATE(1996, 01, 01), 7) +
-    MIN(1, 24 / 10 * (MAX(0, MOD(CreatedDate - DATETIMEVALUE(TEXT(DATEVALUE(CreatedDate)) & ' 08:00:00'), 1))))
-    ))
-    -
-    (5 * FLOOR((DATEVALUE(campo__c.CreatedDate) - DATE(1996, 01, 01)) / 7) +
-    MIN(5, MOD(DATEVALUE(campo__c.CreatedDate) - DATE(1996, 01, 01), 7) +
-    MIN(1, 24 / 10 * (MAX(0, MOD(campo__c.CreatedDate - DATETIMEVALUE(TEXT(DATEVALUE(campo__c.CreatedDate)) & ' 08:00:00'), 1))))
-    ))
-    ) * 60
-
-                    </code>
-                </pre>
+                <img src="imgs/sff.png" alt="Imagem da postagem 1">
+                <h3>SalesBlog: Aprenda e Compartilhe Conhecimento sobre o CRM Mais Poderoso</h3>
+                <p>
+                    Este blog foi criado com a intenção de ajudar outros estudantes e compartilhar meu progresso nos estudos em relação ao CRM Salesforce. Aqui você encontrará informações úteis sobre Salesforce, dicas, tutoriais e outras publicações relacionadas a essa poderosa plataforma de tecnologia. Seja bem-vindo e espero que esse espaço seja útil para você aprender e se inspirar no mundo do Salesforce!
+                </p>
             </div>
         </div>
     </div>
@@ -221,3 +207,4 @@
     </script>
 </body>
 </html>
+
